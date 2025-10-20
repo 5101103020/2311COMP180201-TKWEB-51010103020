@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/cpp.css" />
+  </head>
+  <body>
+    <h1>Add New Product</h1>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      "
+    >
+      <button id="btnAdd" class="primary">Thêm sản phẩm</button>
+      <input
+        id="search"
+        type="text"
+        placeholder="Tìm sản phẩm..."
+        style="
+          padding: 6px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 200px;
+        "
+      />
+    </div>
+    <h1>Display All Product</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá (VNĐ)</th>
+          <th>Số lượng</th>
+          <th>Mô tả</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="productBody"></tbody>
+    </table>
+    <div id="modal" class="hidden">
+      <div class="modal-overlay">
+        <div class="modal">
+          <h3 id="modalTitle">Thêm sản phẩm</h3>
+          <form id="formProduct">
+            <div class="field">
+              <label>Tên sản phẩm</label>
+              <input id="name" type="text" required />
+            </div>
+            <div class="field">
+              <label>Giá (VNĐ)</label>
+              <input id="price" type="number" min="0" required />
+            </div>
+            <div class="field">
+              <label>Số lượng</label>
+              <input id="qty" type="number" min="0" required />
+            </div>
+            <div class="field">
+              <label>Mô tả</label>
+              <input id="desc" type="text" />
+            </div>
+            <input type="hidden" id="editingId" />
+            <div style="text-align: right">
+              <button type="button" id="btnCancel">Huỷ</button>
+              <button type="submit" class="primary">Lưu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
