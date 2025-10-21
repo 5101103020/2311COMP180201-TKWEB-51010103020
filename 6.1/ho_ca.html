@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hồ cá vui nhộn</title>
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
+    <div id="controlPanel">
+      <button id="musicBtn">Music</button>
+      <button id="bgBtn">Hình nền</button>
+    </div>
+    <div id="content">
+      <div id="shark">
+        <img src="img/shark.png" alt="" width="auto" height="auto" />
+      </div>
+      <div id="turtle">
+        <img src="img/turtle.png" alt="" width="120" height="auto" />
+      </div>
+      <div id="goldFishSchool">
+        <img src="img/goldFishSchool.png" alt="" width="150" height="auto" />
+      </div>
+      <div id="diver3">
+        <img src="img/diver3.png" alt="" width="250" height="200" />
+      </div>
+      <div id="diver2">
+        <img src="img/diver2.png" width="auto" height="auto" />
+      </div>
+      <div id="diver1">
+        <img src="img/diver1.png" width="auto" height="auto" />
+      </div>
+    </div>
+    <audio
+      id="bgMusic"
+      src="audio/music-for-game-fun-kid-game-163649.mp3"
+      loop
+    ></audio>
+  </body>
+  <script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    const bgBtn = document.getElementById("bgBtn");
+    const content = document.getElementById("content");
+
+    // Bật/Tắt nhạc
+    musicBtn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play().catch((err) => console.log("Autoplay blocked: ", err));
+        musicBtn.textContent = "Off";
+      } else {
+        music.pause();
+        musicBtn.textContent = "On";
+      }
+    });
+
+    // Thay đổi hình nền
+    const backgrounds = [
+      "img/OIP.jpg",
+      "img/OIP.png",
+      "img/4a578ee51c41bf0de36270e2e87d5f93.jpg_720x720q80.jpg",
+    ];
+    let bgIndex = 0;
+
+    bgBtn.addEventListener("click", () => {
+      bgIndex = (bgIndex + 1) % backgrounds.length;
+      content.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
+    });
+  </script>
+</html>
