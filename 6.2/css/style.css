@@ -1,0 +1,141 @@
+/* style.css */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Comic Sans MS", cursive;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  z-index: 1000;
+}
+header h1 {
+  margin: 5px 0;
+  color: orange;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: orange;
+}
+button {
+  background: orange;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+section {
+  padding: 100px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 60px 0;
+  border-radius: 10px;
+}
+section h2 {
+  color: orange;
+}
+
+.product {
+  display: inline-block;
+  margin: 20px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.product img {
+  width: 120px;
+  height: 120px;
+}
+.product .desc {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.product:hover {
+  transform: scale(1.1);
+}
+.product:hover .desc {
+  display: block;
+}
+
+.gallery img {
+  width: 250px;
+  height: 180px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px orange;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+}
+
+/* Ma bay */
+#ghost {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: url("https://cdn-icons-png.flaticon.com/512/4144/4144359.png")
+    no-repeat center/contain;
+  top: 200px;
+  left: -150px;
+  animation: ghostMove 12s linear infinite;
+}
+@keyframes ghostMove {
+  0% {
+    left: -150px;
+    top: 200px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    top: 180px;
+  }
+  100% {
+    left: 110%;
+    top: 220px;
+    opacity: 0;
+  }
+}
